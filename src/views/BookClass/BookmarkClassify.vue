@@ -1,15 +1,14 @@
 <template>
+    <div>书签分类</div>
     <router-view></router-view>
 </template>
 
 <script>
-
 export default {
-  setup() {
-    
-  },
+
 }
 </script>
-<style lang="scss">
+
+<style>
 
 </style>

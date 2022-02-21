@@ -1,4 +1,6 @@
 import { createStore } from 'vuex'
+import login from './login.js'
+import BookmarkManage from './BookmarkManage.js'
 
 export default createStore({
   state: {
@@ -8,5 +10,7 @@ export default createStore({
   actions: {
   },
   modules: {
+    login,
+    BookmarkManage
   }
 })
