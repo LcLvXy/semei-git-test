@@ -3,13 +3,11 @@ import { getAllBookmark } from '@/axios/api.js'
 // 引入hook
 import TreeData from '../hooks/useTreeData.js'
 
-import { message } from "ant-design-vue";
-
-import toPages from '../hooks/useToPages'
+import { message } from "ant-design-vue"
 
 export default {
     state:() => ({
-        list:[]
+        list:[],
     }),
     mutations: {
         getTreeData(state,list) {
@@ -26,9 +24,10 @@ export default {
                     })
                 } else {
                     message.warning(res.msg)
-                    toPages('name')
+                    return new Promise((reslove) => {
+                        reslove(false)
+                    })
                 }
-
             })
         }
     },

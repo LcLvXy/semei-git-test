@@ -1,5 +1,4 @@
-//引入vueCookie
-import VueCookies from 'vue-cookies'
+
 
 //如果需要使用get请从外部导入
 import { post,get } from './request.js';
@@ -18,29 +17,24 @@ export function userLogin(data = {}) {
     return post('/User/User.php?s=login',data)
 }
 
-export function getAllBookmark() {
+export function getAllBookmark(data={}) {
     return get('/Category/Category.php?s=getAll',{
-        headers:{
-            Authorization:VueCookies.get('seMeiUserToken')
-        }
+        data
     })
 }
 
 export function sendClassify(data = {}) {
-    return post('/Category/Category.php?s=addCategory',data,{
-        headers:{
-            Authorization:VueCookies.get('seMeiUserToken')
-        }
-    })
+    return post('/Category/Category.php?s=addCategory',data)
 }
 
 export function removeClassify(id) {
     return get('/Category/Category.php?s=deleteCategory',{
         data:{
             classId:id      
-        },
-        headers:{
-            Authorization:VueCookies.get('seMeiUserToken')
         }
     })
+}
+
+export function modifyClassification(data = {}) {
+    return post('/Category/Category.php?s=amendCategory',data)
 }

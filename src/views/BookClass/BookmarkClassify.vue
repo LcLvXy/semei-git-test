@@ -1,5 +1,4 @@
 <template>
-    <div>书签分类</div>
     <router-view></router-view>
 </template>
 

@@ -66,14 +66,6 @@ setup() {
 });
 </script>
 <style>
-#components-layout-demo-custom-trigger .trigger {
-    font-size: 18px;
-    line-height: 64px;
-    padding: 0 24px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
 #components-layout-demo-custom-trigger .trigger:hover {
     color: #1890ff;
 }
@@ -96,7 +88,4 @@ setup() {
     height: 100vh;
 }
 
-.anticon svg {
-    margin-left: 18px;
-}
 </style>

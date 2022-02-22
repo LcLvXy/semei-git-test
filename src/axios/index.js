@@ -1,13 +1,15 @@
 import axios from 'axios';
 import Qs from 'qs';
 import {localDataHttp} from './instance.js';
+//引入vueCookie
+import VueCookies from 'vue-cookies'
 
 const axiosInstance =  axios.create({
     baseURL: 'https://www.semei.net/BookApi/',
     method: 'get', // 默认值
     timeout: 8000, //超过八千毫秒则超时
     responseType: 'json', // 默认值
-    // headers: {'Content-Type': 'application/x-www-from-urlencoded'},
+    headers: {Authorization:VueCookies.get('seMeiUserToken')},
     transformRequest: [function (data) {
         // 对发送的 data 进行任意转换处理
         if (data instanceof FormData || data instanceof URLSearchParams) return data;
